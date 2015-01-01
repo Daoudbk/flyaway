@@ -1,5 +1,5 @@
 'use strict';
-angular.module('app').controller('searchController', function ($scope, $location) {
+angular.module('app').controller('searchController', function ($scope, $location, $mdSidenav) {
   $scope.flight = {
     from: 'Spain',
     to: 'Anywhere',
@@ -9,5 +9,9 @@ angular.module('app').controller('searchController', function ($scope, $location
   $scope.findFlights = function () {
     $scope.slide = 'slide-left';
     $location.url('flight')
-  }
+  };
+
+  $scope.showLeftMenu = function () {
+    $mdSidenav('left').toggle()
+  };
 });
