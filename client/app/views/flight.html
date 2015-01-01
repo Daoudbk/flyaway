@@ -1,0 +1,48 @@
+<div ng-controller="flightController">
+
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools">
+      <span class="md-flex">Best flight rates for December</span>
+    </div>
+  </md-toolbar>
+
+  <md-content class="content">
+    <md-list>
+      <md-item ng-repeat="flight in flights"
+               ng-click="showCities(flight)">
+        <md-item-content
+          layout="row"
+          layout-align="space-between center">
+
+          <h3>{{flight.destination}}</h3>
+
+          <div>
+            {{flight.price}} <br/>
+            {{flight.dateRange}} days
+          </div>
+
+        </md-item-content>
+        <md-divider ng-if="!$last"></md-divider>
+
+        <md-list ng-if="flight.open">
+          <md-item ng-repeat="city in flight.cities"
+                   ng-click="showCity(city.id)">
+            <md-item-content layout="row"
+                             style="padding-left: 20px"
+                             layout-align="space-between center">
+              <h5>{{city.destination}}</h5>
+
+              <div>
+                {{city.price}} <br/>
+                {{city.dateRange}} days
+              </div>
+
+            </md-item-content>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-item>
+        </md-list>
+
+      </md-item>
+    </md-list>
+  </md-content>
+</div>

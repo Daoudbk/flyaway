@@ -1,0 +1,25 @@
+<div ng-controller="monthController">
+
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools">
+      <span class="md-flex">Barcelona to Milan</span>
+    </div>
+  </md-toolbar>
+
+  <md-content class="content">
+    <md-list>
+      <md-item ng-repeat="monthFlight in monthFlights"
+               ng-click="showFlight(monthFlight.id)">
+        <md-item-content layout="row"
+                         layout-align="space-between center">
+          <h3>{{monthFlight.date}}.01.2015 ({{monthFlight.day}})</h3>
+
+          <div>{{monthFlight.price}} € <br/>
+            {{monthFlight.dateRange}} days
+          </div>
+        </md-item-content>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-item>
+    </md-list>
+  </md-content>
+</div>

@@ -6,19 +6,21 @@
     </div>
   </md-toolbar>
 
-  <md-content class="search-content">
-      <div class="row">
-        <md-text-float label="From"
-                       ng-model="flight.from"></md-text-float>
-        <md-text-float label="To"
-                       ng-model="flight.to"></md-text-float>
-        <md-radio-group ng-model="flight.range">
-          <md-radio-button value="0">3-5 days</md-radio-button>
-          <md-radio-button value="1">5-7 days</md-radio-button>
-          <md-radio-button value="2">8-10 days</md-radio-button>
-        </md-radio-group>
-      </div>
+  <md-content class="content">
+    <div class="row">
+      <md-text-float label="From"
+                     ng-model="flight.from"></md-text-float>
+      <md-text-float label="To"
+                     ng-model="flight.to"></md-text-float>
+      <md-radio-group ng-model="flight.range">
+        <md-radio-button value="0">3-5 days</md-radio-button>
+        <md-radio-button value="1">5-7 days</md-radio-button>
+        <md-radio-button value="2">8-10 days</md-radio-button>
+      </md-radio-group>
+    </div>
 
-      <md-button class="md-raised md-primary search-button">Find flights</md-button>
+    <md-button class="md-raised md-primary search-button"
+               ng-click="findFlights()">Find flights
+    </md-button>
   </md-content>
 </div>
