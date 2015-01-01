@@ -2,11 +2,14 @@
 
   <md-toolbar class="md-accent">
     <div class="md-toolbar-tools">
-      <span class="md-flex">Best flight rates for December</span>
+      <a ng-click="navigateBack()">
+        <md-icon icon="/images/ic_arrow_back_24px.svg"></md-icon>
+      </a>
+      <span>Best flight rates for December</span>
     </div>
   </md-toolbar>
 
-  <md-content class="content">
+  <md-content class="md-padding">
     <md-list>
       <md-item ng-repeat="flight in flights"
                ng-click="showCities(flight)">

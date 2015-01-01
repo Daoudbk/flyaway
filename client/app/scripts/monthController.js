@@ -1,9 +1,14 @@
 'use strict';
-angular.module('app').controller('monthController', function ($scope, $location) {
+angular.module('app').controller('monthController', function ($scope, $location, $window) {
 
   $scope.monthFlights = getMonthFlights();
+
   $scope.showFlight = function (id) {
     $location.url('flight/' + id);
+  };
+
+  $scope.navigateBack = function () {
+    $window.history.back();
   };
 
   function getMonthFlights() {

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('app').controller('flightController', function ($scope, $location) {
+angular.module('app').controller('flightController', function ($scope, $location, $window) {
 
   $scope.flights = getFlights();
 
@@ -10,6 +10,10 @@ angular.module('app').controller('flightController', function ($scope, $location
 
   $scope.showCity = function (id) {
     $location.url('city/' + id);
+  };
+
+  $scope.navigateBack = function () {
+    $window.history.back();
   };
 
   function getFlights() {

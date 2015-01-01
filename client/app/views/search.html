@@ -2,27 +2,31 @@
 
   <md-toolbar class="md-accent">
     <div class="md-toolbar-tools">
-      <md-button ng-click="showLeftMenu()">Flyaway</md-button>
+      <a ng-click="showLeftMenu()">
+        <md-icon icon="/images/ic_menu_24px.svg"></md-icon>
+      </a>
+      <span>Flyaway</span>
     </div>
   </md-toolbar>
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2"
               md-component-id="left"
               md-is-locked-open="$media('gt-md')">
-    <md-toolbar class="md-theme-indigo">
+    <md-toolbar>
       <h5 class="md-toolbar-tools">Flyaway</h5>
     </md-toolbar>
     <md-content class="md-padding">
-      <div class="row">
-        <md-button class="md-primary">Search</md-button>
-        <br/>
-        <md-button class="md-primary">About</md-button>
-      </div>
+      <md-button class="md-primary">Search</md-button>
+      <br/>
+      <md-button class="md-primary">About</md-button>
     </md-content>
   </md-sidenav>
 
-  <md-content class="content">
-    <div class="row">
+  <md-content class="md-padding"
+              layout="column"
+              layout-align="center space-around">
+
+    <div class="column">
       <md-text-float label="From"
                      ng-model="flight.from"></md-text-float>
       <md-text-float label="To"
@@ -34,8 +38,15 @@
       </md-radio-group>
     </div>
 
-    <md-button class="md-raised md-primary search-button"
-               ng-click="findFlights()">Find flights
-    </md-button>
+    <div layout="row"
+         layout-align="end center">
+
+      <md-button class="md-fab md-primary"
+                 ng-click="findFlights()">
+        <md-icon icon="/images/ic_flight_24px.svg"></md-icon>
+        <md-tooltip>Search</md-tooltip>
+      </md-button>
+    </div>
   </md-content>
+
 </div>
