@@ -3,8 +3,8 @@ angular.module('app').controller('monthController', function ($scope, $location,
 
   $scope.monthFlights = getMonthFlights();
 
-  $scope.showFlight = function (id) {
-    $location.url('flight/' + id);
+  $scope.showFlight = function () {
+    $location.url('booking/Barcelona/Milan/12012014/16012014');
   };
 
   $scope.navigateBack = function () {

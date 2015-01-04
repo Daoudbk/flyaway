@@ -2,14 +2,20 @@
 angular.module('app').controller('flightController', function ($scope, $location, $window) {
 
   $scope.flights = getFlights();
+  $scope.flight = {
+    from: 'Spain',
+    to: 'Anywhere',
+    range: '0',
+    month: 'December'
+  };
 
   $scope.showCities = function (flight) {
     flight.cities = getCities();
     flight.open = !flight.open;
   };
 
-  $scope.showCity = function (id) {
-    $location.url('city/' + id);
+  $scope.showCity = function () {
+    $location.url('search/month/' + $scope.flight.from + '/' + $scope.flight.to + '/' + $scope.flight.month + '/' + $scope.flight.range);
   };
 
   $scope.navigateBack = function () {

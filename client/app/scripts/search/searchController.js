@@ -10,7 +10,7 @@ angular.module('app').controller('searchController', function ($scope, $location
 
   $scope.findFlights = function () {
     $scope.slide = 'slide-left';
-    $location.url('flight')
+    $location.url('search/flight/' + $scope.flight.from + '/' + $scope.flight.to + '/' + $scope.flight.month + '/'+ $scope.flight.range)
   };
 
   $scope.showLeftMenu = function () {

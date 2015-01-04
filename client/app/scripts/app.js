@@ -7,16 +7,20 @@ angular.module('app', [
 ]).config(function ($routeProvider) {
   $routeProvider
     .when('/search', {
-      templateUrl: '../views/search.html'
+      templateUrl: 'views/search/search.html',
+      controller: "searchController"
     })
-    .when('/flight', {
-      templateUrl: '../views/flight.html'
+    .when('/search/flight/:from/:to/:month/:range', {
+      templateUrl: 'views/search/flight.html',
+      controller: "flightController"
     })
-    .when('/city/:id', {
-      templateUrl: '../views/month.html'
+    .when('/search/month/:from/:to/:month/:range', {
+      templateUrl: 'views/search/month.html',
+      controller: "monthController"
     })
-    .when('/flight/:id', {
-      templateUrl: '../views/flight-detail.html'
+    .when('/booking/:from/:to/:fromdate/:backdate', {
+      templateUrl: 'views/booking/booking.html',
+      controller: "bookingController"
     })
     .otherwise({
       redirectTo: '/search'
