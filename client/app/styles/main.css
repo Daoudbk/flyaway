@@ -1,4 +1,8 @@
 input {
-  width: 100%;
-  margin-top: 20px;
-}
+  width: 100%; }
+
+.form-label {
+  color: rgba(0, 0, 0, 0.372);
+  font-size: 0.75em; }
+
+/*# sourceMappingURL=main.css.map */

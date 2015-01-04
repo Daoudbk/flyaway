@@ -2,6 +2,7 @@
 angular.module('app', [
   'ngRoute',
   'ngMaterial',
+  'mobile-angular-ui',
   '_'
 ]).config(function ($routeProvider) {
   $routeProvider

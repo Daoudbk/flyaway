@@ -26,17 +26,27 @@
               layout="column"
               layout-align="center space-around">
 
-    <div class="column">
       <md-text-float label="From"
                      ng-model="flight.from"></md-text-float>
       <md-text-float label="To"
                      ng-model="flight.to"></md-text-float>
-      <md-radio-group ng-model="flight.range">
+
+
+      <label for="monthSelect"
+             class="form-label">At</label>
+      <select id='monthSelect'
+              class="form-control"
+              ng-model="flight.month">
+        <option ng-repeat="month in months">{{month}}</option>
+      </select>
+
+      <md-radio-group layout="row"
+                      layout-align="center center"
+                      ng-model="flight.range">
         <md-radio-button value="0">3-5 days</md-radio-button>
         <md-radio-button value="1">5-7 days</md-radio-button>
         <md-radio-button value="2">8-10 days</md-radio-button>
       </md-radio-group>
-    </div>
 
     <div layout="row"
          layout-align="end center">
