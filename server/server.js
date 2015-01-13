@@ -1,6 +1,7 @@
-var express = require('express')
-    , http = require('http')
-    , path = require('path');
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var search = require('./routes/search');
 
 var app = express();
 
@@ -16,9 +17,8 @@ app.configure('development', function () {
     app.use(express.errorHandler());
 });
 
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-})
+app.get('/country', search.findFlightsByCountry);
+app.get('/city', search.findFlightsByCity);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));

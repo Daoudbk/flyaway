@@ -1,7 +1,7 @@
 <md-toolbar class="md-accent">
   <div class="md-toolbar-tools">
     <a ng-click="showLeftMenu()">
-      <md-icon icon="/images/ic_menu_24px.svg"></md-icon>
+      <md-icon icon="images/ic_menu_24px.svg"></md-icon>
     </a>
     <span>Flyaway</span>
   </div>
@@ -17,22 +17,22 @@
               layout-align="center space-around">
 
     <md-text-float label="From"
-                   ng-model="flight.from"></md-text-float>
+                   ng-model="getSearchQuery().from"></md-text-float>
     <md-text-float label="To"
-                   ng-model="flight.to"></md-text-float>
+                   ng-model="getSearchQuery().to"></md-text-float>
 
 
     <label for="monthSelect"
            class="form-label">At</label>
     <select id='monthSelect'
             class="form-control"
-            ng-model="flight.month">
+            ng-model="getSearchQuery().month">
       <option ng-repeat="month in months">{{month}}</option>
     </select>
 
     <md-radio-group layout="row"
                     layout-align="center center"
-                    ng-model="flight.range">
+                    ng-model="getSearchQuery().range">
       <md-radio-button value="0">3-5 days</md-radio-button>
       <md-radio-button value="1">5-7 days</md-radio-button>
       <md-radio-button value="2">8-10 days</md-radio-button>
@@ -42,8 +42,8 @@
          layout-align="end center">
 
       <md-button class="md-fab md-primary"
-                 ng-click="findFlights()">
-        <md-icon icon="/images/ic_flight_24px.svg"></md-icon>
+                 ng-click="showCountryView()">
+        <md-icon icon="images/ic_flight_24px.svg"></md-icon>
         <md-tooltip>Search</md-tooltip>
       </md-button>
     </div>

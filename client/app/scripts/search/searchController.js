@@ -1,20 +1,17 @@
 'use strict';
-angular.module('app').controller('searchController', function ($scope, $location, $mdSidenav) {
-  $scope.flight = {
-    from: 'Spain',
-    to: 'Anywhere',
-    range: '0',
-    month: 'December'
-  };
+angular.module('app').controller('searchController', function ($scope, $location, $mdSidenav, searchService) {
   $scope.months = getMonths();
 
-  $scope.findFlights = function () {
-    $scope.slide = 'slide-left';
-    $location.url('search/flight/' + $scope.flight.from + '/' + $scope.flight.to + '/' + $scope.flight.month + '/'+ $scope.flight.range)
+  $scope.getSearchQuery = function () {
+    return searchService.searchQuery;
+  };
+
+  $scope.showCountryView = function () {
+    $location.url('search/country/' + searchService.flightUrl())
   };
 
   $scope.showLeftMenu = function () {
-    $mdSidenav('left').toggle()
+    $mdSidenav('left').toggle();
   };
 
   function getMonths() {
