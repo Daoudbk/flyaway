@@ -17,10 +17,6 @@ angular.module('app').controller('countryController', function ($scope, $locatio
     $location.url('search/city/' + searchService.flightUrl());
   };
 
-  $scope.navigateBack = function () {
-    $window.history.back();
-  };
-
   $scope.loadFlights = function () {
     searchService.loadFlights();
   };

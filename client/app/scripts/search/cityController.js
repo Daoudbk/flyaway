@@ -12,8 +12,4 @@ angular.module('app').controller('cityController', function ($scope, $location, 
   $scope.showBooking = function () {
     $location.url('search/booking/Barcelona/Milan/12012014/16012014');
   };
-
-  $scope.navigateBack = function () {
-    $window.history.back();
-  };
 });
