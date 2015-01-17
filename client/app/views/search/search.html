@@ -7,9 +7,13 @@
   </div>
 </md-toolbar>
 
-<section layout="row">
+<section layout="row" style="height: 100%">
 
-  <sidenav></sidenav>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+              md-component-id="left"
+              md-is-locked-open="$media('gt-md')">
+    <sidenav></sidenav>
+  </md-sidenav>
 
   <md-content class="md-padding"
               flex
@@ -42,6 +46,7 @@
          layout-align="end center">
 
       <md-button class="md-fab md-primary"
+                 aria-label="search"
                  ng-click="showCountryView()">
         <md-icon icon="images/ic_flight_24px.svg"></md-icon>
         <md-tooltip>Search</md-tooltip>
