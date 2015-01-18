@@ -7,7 +7,8 @@
   </div>
 </md-toolbar>
 
-<section layout="row" style="height: 100%">
+<section layout="row"
+         style="height: 100%;">
 
   <md-sidenav class="md-sidenav-left md-whiteframe-z2"
               md-component-id="left"
@@ -42,15 +43,12 @@
       <md-radio-button value="2">8-10 days</md-radio-button>
     </md-radio-group>
 
-    <div layout="row"
-         layout-align="end center">
-
-      <md-button class="md-fab md-primary"
-                 aria-label="search"
-                 ng-click="showCountryView()">
-        <md-icon icon="images/ic_flight_24px.svg"></md-icon>
-        <md-tooltip>Search</md-tooltip>
-      </md-button>
-    </div>
   </md-content>
 </section>
+
+<md-button class="md-fab md-primary md-fab-bottom-right"
+           aria-label="search"
+           ng-click="showCountryView()">
+  <md-icon icon="images/ic_flight_24px.svg"></md-icon>
+  <md-tooltip>Search</md-tooltip>
+</md-button>
